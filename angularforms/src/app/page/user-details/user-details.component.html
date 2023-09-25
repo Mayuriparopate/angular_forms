@@ -1,0 +1,19 @@
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button
+                class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100"
+                    width="100" /></button> 
+                    <span class="name mt-3">{{this.data.email}}</span> 
+                    <span
+                class="idd">{{this.data.mobile}}</span>
+                <span *ngIf="this.data.name" appColorChange
+                class="idd">{{this.data.name}}</span>
+
+
+        </div>
+        <button class="btn btn-large btn-primary btn-block confirm-button" (click)="editProfile()">Edit</button>
+        <p class="agree-text" *ngFor="let item of list">{{item.name}}</p>
+    </div>
+
+   
+</div>

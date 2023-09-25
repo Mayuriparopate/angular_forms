@@ -1,0 +1,42 @@
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <form [formGroup]="reactiveform" (ngSubmit)="submit()">
+      <div class="card px-1 py-4">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <div class="input-group"> 
+                              <input class="form-control" type="text" placeholder="Name" formControlName="name"> 
+                          
+                          </div>
+                          <small class="text-danger" *ngIf="reactiveform.get('name').invalid && reactiveform.get('name').touched"> Please Enter Valid Name</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <div class="input-group">
+                               <input class="form-control" type="text" placeholder="Email ID" formControlName="email"> </div>
+                               <small class="text-danger" *ngIf="reactiveform.get('email').invalid && reactiveform.get('email').touched"> Please Enter Valid Email Id</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="input-group"> 
+                            <input class="form-control" type="text" placeholder="Mobile" formControlName="mobile"> 
+                        
+                        </div>
+                        <small class="text-danger" *ngIf="reactiveform.get('mobile').invalid && reactiveform.get('mobile').touched"> Please Enter Valid mobile</small>
+                        <!-- <small class="text-danger" *ngIf="reactiveform.get('mobile').hasError('pattern') && reactiveform.get('mobile').invalid && reactiveform.get('mobile').touched"> Please Enter Valid Mobile Number</small> -->
+                    </div>
+                </div>
+            </div>
+           
+                   <button class="btn btn-large btn-primary btn-block confirm-button mt-3" [disabled]="reactiveform.invalid">Confirm</button>
+          </div>
+      </div>
+  </form> 
+  </div>
